@@ -21,7 +21,7 @@ class Carrito:
 
         else:
             self.carrito[id]["cantidad"] +=1
-            self.carrito[id]["CUMULADO"] += producto.precio
+            self.carrito[id]["acumulado"] += producto.precio
         self.guardar_carrito()
 
     def guardar_carrito(self):
@@ -45,3 +45,8 @@ class Carrito:
     def limpiar(self):
         self.session["carrito"] = {}
         self.session.modified = True
+
+
+    # def total(self):
+    #     total = sum(item["acumulado"] for item in self.carrito.values())
+    #     return total
