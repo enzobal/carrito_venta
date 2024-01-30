@@ -5,12 +5,14 @@ from django.shortcuts import render, HttpResponse,redirect
 from CarritoApp.Carrito import Carrito
 from CarritoApp.models import Producto
 from CarritoApp.models import Producto2
+from CarritoApp.models import Producto3
 from CarritoApp.context_processor import  total_carrito
 # # def inicio(request):
 # #     return HttpResponse("<h1> Bienvenidos <h1>")
 
 def index(request):
-    return render(request, "index.html", )
+    productos3 =  Producto3.objects.all()  
+    return render(request, "index.html",{'productos' :productos3} )
 
 def seguidores(request):
     productos2 =  Producto2.objects.all()

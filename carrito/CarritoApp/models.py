@@ -32,3 +32,12 @@ class Producto2(models.Model):
     def __str__(self):
         return f'{self.nombre} -> {self.precio}'
 
+
+# es de index
+class Producto3(models.Model):
+    nombre = models.CharField(max_length=100)
+    imagen = models.ImageField(upload_to='productos3/', null=True, blank=True)
+    descripcion = models.TextField()
+    precio = models.IntegerField()
+    def __str__(self):
+        return f'{self.nombre} -> {self.precio}'
